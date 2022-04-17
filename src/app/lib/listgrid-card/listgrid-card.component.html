@@ -1,0 +1,14 @@
+<div class="list-card {{type}}">
+    <label>{{data.tag}}</label>
+    <div class="info">
+        <h5>{{data.title}}</h5>
+        <p>{{data.description}}</p>
+    </div>
+    <div class="action" *ngIf="!hideLink">
+        <a class="btn btn-link pl-0" [routerLink]="['/solution/' + (data.title.split(' ').join('-').toLowerCase())]">
+            <span>Learn more</span>
+            <i class="mdi mdi-arrow-top-right"></i>
+        </a>
+        <img src="/assets/img/svg/art-listcard.svg" />
+    </div>
+</div>

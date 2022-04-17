@@ -1,0 +1,114 @@
+.about-brief {
+    position: relative;
+    padding-top: 10em;
+    padding-bottom: 8em;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 75%;
+        background-color: rgba($orange, 0.06);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        width: 15rem;
+        height: 13.75rem;
+        background-image: url("/assets/img/svg/art-boxes.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    .banner {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30rem;
+        overflow: hidden;
+        margin-bottom: 12em;
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+    .quote {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 25%;
+            background-color: rgba($yellow, 0.1);
+        }
+        h3 {
+            font-size: 3.75rem;
+            font-weight: 400;
+            line-height: 110%;
+            padding: 0.5em 2em 0.5em 0;
+        }
+    }
+    .info {
+        width: 60%;
+        margin: 3em auto;
+        p {
+            margin-bottom: 1.5em;
+        }
+    }
+}
+
+@include media("<=tablet2x") {
+    .about-brief {
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 75%;
+            background-color: rgba($orange, 0.06);
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: 3;
+            left: 0;
+            top: 0;
+            background: none;
+        }
+        .banner {
+            margin-bottom: 7rem;
+            height: 20rem;
+        }
+    }
+}
+
+@include media("<=phone2x") {
+    .about-brief {
+        .banner {
+            height: 12rem;
+            margin-bottom: 4rem;
+        }
+        padding-bottom: 3rem;
+        padding-top: 4rem;
+        .quote {
+            h3 {
+                font-size: 2rem;
+                padding: 0.5rem;
+            }
+        }
+        .info {
+            width: 90%;
+        }
+    }
+}

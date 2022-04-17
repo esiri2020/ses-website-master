@@ -1,0 +1,54 @@
+@mixin selection($selection-bg: #333, $selection-c: #fff, $selection-ts: none) {
+  ::-moz-selection {
+    background: $selection-bg;
+    color: $selection-c;
+    text-shadow: $selection-ts;
+  }
+  ::selection {
+    background: $selection-bg;
+    color: $selection-c;
+    text-shadow: $selection-ts;
+  }
+}
+@mixin mb_testimonials {
+  .testimonials {
+    .art-quote {
+      left: 0%;
+      width: 196px;
+    }
+    .heading {
+      margin-bottom: 2em;
+      h3 {
+        width: auto;
+        font-size: 32px;
+        padding-right: 1em;
+      }
+    }
+    .testimony-list {
+      margin: 0px 0em;
+      .slick-track {
+        display: -webkit-box !important;
+      }
+      .item {
+        margin: 0 1.5em 4em 0.5em;
+        height: 320px;
+        padding: 1.5em 1.5em;
+        width: 317px !important;
+        p {
+          font-size: 20px;
+          line-height: 160%;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+@mixin mb_getstarted {
+  .get-started {
+    .content .info h3 {
+      width: auto;
+      padding: 0em 1em;
+      font-size: 25px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<ses-header [theme]="'light'"></ses-header>
+<main>
+    <ses-home-hero [qoutes]="partnerQoutes" [hero]="heroTitle" [description]="heroDesp" [clients]="heroClients">
+    </ses-home-hero>
+
+    <ses-home-metrics></ses-home-metrics>
+    <ses-home-brief></ses-home-brief>
+    <ses-home-services></ses-home-services>
+    <ses-home-partners></ses-home-partners>
+    <ses-home-contact></ses-home-contact>
+
+    <ses-schedule-float-card [offsetElement]="'.home-partners'"></ses-schedule-float-card>
+</main>
+<ses-footer [showCompanies]="true"></ses-footer>

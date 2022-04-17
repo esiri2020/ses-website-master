@@ -1,0 +1,97 @@
+.about-history {
+    .heading {
+        margin-bottom: 18px;
+        & + p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+
+    .timeline {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        margin-top: 6em;
+        margin-bottom: 15em;
+        .item {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: stretch;
+            align-items: flex-start;
+            width: 260px;
+            height: 640px;
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                background-color: $yellow;
+                padding: 2em 2em 1.25em 2em;
+                min-height: 50%;
+                .top {
+                    margin-bottom: 1em;
+                }
+                p {
+                    font-weight: 700;
+                    font-size: 0.75rem;
+                    line-height: 160%;
+                    color: $orange;
+                }
+                h2 {
+                    font-weight: 700;
+                    font-size: 5rem;
+                    line-height: 100%;
+                    color: $orange;
+                }
+                img {
+                    width: 100%;
+                    &.arrow-white {
+                        display: none;
+                    }
+                }
+            }
+            .image {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            &.reverse {
+                flex-direction: column-reverse;
+            }
+
+            &:nth-child(even) {
+                .info {
+                    background-color: $orange;
+                    h2,
+                    p {
+                        color: $white;
+                    }
+                    img {
+                        &.arrow-white {
+                            display: block;
+                        }
+                        &.arrow-orange {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include media ("<=phone2x") {
+    .about-history {
+        .timeline {
+            margin-bottom: 3rem;
+        }
+    }
+}

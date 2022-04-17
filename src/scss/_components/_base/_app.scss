@@ -1,0 +1,269 @@
+// Contains Styles for General Simple Components Like Card, Wrappers, Heading etc...
+
+html {
+    background: $white;
+    padding: 0;
+    margin: 0;
+}
+body {
+    box-sizing: content-box;
+    text-rendering: geometricPrecision;
+    font-weight: 400;
+    color: $black;
+    background: $white;
+    padding: 0;
+    margin: 0;
+}
+p {
+    color: rgba($black, 0.7);
+}
+.mdi {
+    display: inline-flex;
+    align-items: center;
+}
+.carousel,
+.carousel-inner,
+.carousel-item {
+    outline: none;
+    box-shadow: none;
+}
+
+section .heading {
+    line-height: 100%;
+    margin-bottom: 1.5em;
+    font-weight: 700;
+    em {
+        color: $orange;
+        font-weight: 900;
+        font-style: normal;
+    }
+}
+
+.list-card {
+    position: relative;
+    padding: 1.65em 30px;
+    background-color: $white;
+    margin-bottom: 2em;
+    .info {
+        padding-top: 4em;
+        h5 {
+            font-weight: 600;
+        }
+        p {
+            font-size: 0.75rem;
+            line-height: 150%;
+        }
+    }
+
+    &.full {
+        height: 280px;
+        label {
+            position: absolute;
+            left: 30px;
+            top: 25px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            line-height: 100%;
+            text-transform: uppercase;
+            color: $orange;
+        }
+        .action {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            border-top: 1px solid rgba($black, 0.1);
+            padding: 0.5em 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &.short {
+        height: 180px;
+        label,
+        .action {
+            display: none;
+        }
+        .info {
+            padding-top: 0;
+        }
+    }
+}
+.float-card {
+    position: fixed;
+    right: 5vw;
+    bottom: 15vh;
+    background-color: $white;
+    border: 1px solid rgba($black, 0.05);
+    padding: 2em 3em;
+    width: 33vw;
+    z-index: 50;
+    transition: transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1), opacity 300ms cubic-bezier(0.47, 0, 0.745, 0.715);
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 10%;
+        right: 10%;
+        bottom: 0;
+        height: 50px;
+        box-shadow: 0px 10px 30px rgba($orange, 0.2);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: $white;
+    }
+    &.opened {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    &.closed {
+        transform: translateX(800px);
+        opacity: 0;
+    }
+    .close-btn {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 3;
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+        background-color: $yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        cursor: pointer;
+        i {
+            font-size: 1rem;
+            color: $black;
+        }
+    }
+    .content {
+        position: relative;
+        z-index: 3;
+        .info {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin-bottom: 10px;
+            h3 {
+                width: 60%;
+                label {
+                    color: rgba($black, 0.4);
+                }
+                em {
+                    font-style: normal;
+                    color: $orange;
+                }
+            }
+            p {
+                width: 140px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+.scroller {
+    display: block;
+    overflow: hidden;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .scroll-wrap {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+.link-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+    a {
+        margin: 0 1.5em;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: $orange !important;
+        text-decoration: none;
+        opacity: 0.6;
+        cursor: pointer;
+        &.active {
+            opacity: 1;
+        }
+    }
+}
+
+._404 .hero h2 {
+    color: $red;
+}
+
+.location-map {
+    .pin {
+        cursor: pointer;
+        animation: shakeUpSmall 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate;
+    }
+    .pin:last-child {
+        animation-delay: 1.5s;
+    }
+}
+
+@include media("<=desktop2x") {
+    .float-card {
+        width: 38vw;
+    }
+}
+@include media("<=tablet2x") {
+    .float-card {
+        width: 45vw;
+    }
+}
+@include media("<=tablet") {
+    .float-card {
+        width: auto;
+    }
+}
+
+@include media("<=phone2x") {
+    .container,
+    .container-fluid {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .float-card {
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        &::before {
+            top: 0;
+            bottom: auto;
+            box-shadow: 0px -10px 30px rgba($orange, 0.2);
+        }
+        .content .info {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            h3 {
+                width: 100%;
+            }
+            p {
+                width: 80%;
+            }
+        }
+    }
+}

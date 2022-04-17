@@ -1,0 +1,14 @@
+<section class="about-values">
+    <div class="container">
+        <ngb-carousel *ngIf="values" [wrap]="true" [showNavigationArrows]="true" [showNavigationIndicators]="false"
+            [interval]="8000">
+            <ng-template ngbSlide *ngFor="let item of values">
+                <div class="value">
+                    <label>{{item.tag}}</label>
+                    <h2 [innerHTML]="item.title"></h2>
+                    <p>{{item.description}}</p>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+</section>

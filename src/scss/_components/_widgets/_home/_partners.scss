@@ -1,0 +1,55 @@
+.home-partners {
+    padding-top: 10em;
+    margin-bottom: 5em;
+
+    .heading {
+        margin-bottom: 0;
+    }
+    p {
+        width: 35%;
+        margin: 0.5em 0 6em 0;
+    }
+    .partners {
+        display: inline-block;
+        position: relative;
+        min-width: 600px;
+        margin-right: 2.5em;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 40%;
+            background-color: rgba($yellow, 0.05);
+        }
+        &:nth-child(even):before {
+            background-color: rgba($orange, 0.05);
+        }
+        h1 {
+            font-size: 6.875rem;
+            font-weight: 900;
+            color: rgba($black, 0.05);
+            margin-bottom: 1em;
+        }
+        .logos {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(20% - 1em);
+                height: 75px;
+                margin-right: 1em;
+                margin-bottom: 2em;
+                img {
+                    max-width: 85%;
+                    max-height: 45px;
+                }
+            }
+        }
+    }
+}

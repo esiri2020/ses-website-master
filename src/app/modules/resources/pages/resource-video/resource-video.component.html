@@ -1,0 +1,35 @@
+<ses-header></ses-header>
+<main>
+    <section class="resource-hero video">
+        <div class="container">
+            <div class="info">
+                <a class="btn btn-link" [routerLink]="['/resources']">
+                    <i class="mdi mdi-arrow-left"></i>
+                    <span>Back to Resources</span>
+                </a>
+                <h3>{{video.title}}</h3>
+                <div class="props">
+                    <strong>{{video.author}}</strong>
+                    <span>{{video.date | date:'mediumDate'}}</span>
+                    <span>{{video.watchDuration}} mins</span>
+                </div>
+                <p>{{video.description}}</p>
+            </div>
+        </div>
+        <div class="image" (click)="playVideo()">
+            <img [src]="video.coverImage" [alt]="video.title" />
+        </div>
+    </section>
+
+    <div class="resource-content video" [class.show]="showVideo">
+        <div class="head">
+            <p>{{video.title}}</p>
+            <a class="close-btn" (click)="stopVideo()">
+                <i class="mdi mdi-close"></i>
+            </a>
+        </div>
+        <video #videoEl [src]="video.videoURL" width="80%" controls></video>
+
+    </div>
+</main>
+<ses-footer></ses-footer>

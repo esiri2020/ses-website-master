@@ -1,0 +1,99 @@
+.about-values {
+    background-color: rgba($orange, 0.06);
+    .value {
+        position: relative;
+        background-color: $white;
+        padding: 7em 5em;
+        label {
+            position: absolute;
+            left: 10px;
+            top: 50px;
+            font-weight: 900;
+            font-size: 6.875rem;
+            line-height: 100%;
+            color: rgba($black, 0.05);
+        }
+        h2 {
+            position: relative;
+            z-index: 2;
+            font-weight: 700;
+            font-size: 3.75rem;
+            line-height: 100%;
+            margin-bottom: 0.75em;
+            em {
+                font-weight: 900;
+                color: $orange;
+                font-style: normal;
+            }
+        }
+        p {
+            position: relative;
+            z-index: 2;
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 160%;
+            padding-right: 5%;
+        }
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        position: absolute;
+        z-index: 5;
+        left: auto;
+        bottom: auto;
+        height: 30px;
+        width: 30px;
+        color: $gray;
+        i,
+        span {
+            font-size: 35px;
+        }
+
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    .carousel-control-next {
+        top: 100px;
+        right: 70px;
+    }
+    .carousel-control-prev {
+        top: 85px;
+        right: 115px;
+    }
+}
+
+@include media("<=tablet2x") {
+    .about-values {
+        .values {
+            padding: 4rem 5rem;
+        }
+    }
+}
+
+@include media("<=tablet") {
+}
+
+@include media("<=phone2x") {
+    .about-values {
+        .value {
+            padding: (9rem 1.5rem 1.5rem 1.5rem);
+            label {
+                font-size: 5rem;
+                font-weight: 600;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        .carousel-control-next {
+            top: 120px;
+            right: 90px;
+        }
+        .carousel-control-prev {
+            top: 105px;
+            right: 135px;
+        }
+    }
+}

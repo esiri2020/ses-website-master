@@ -1,0 +1,39 @@
+<section class="schedule-modal services">
+    <div class="box">
+        <a class="close-btn">
+            <i class="mdi mdi-close"></i>
+        </a>
+
+        <div class="content">
+            <h3>What services are you interested in?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                et.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                et.</p>
+
+            <div class="link-tab">
+                <a [class.active]="filterQuery === 'all'" (click)="filterService('all')">All</a>
+                <a [class.active]="filterQuery === 'compliance'" (click)="filterService('compliance')">Complaince</a>
+                <a [class.active]="filterQuery === 'app-security'" (click)="filterService('app-security')">Application
+                    Security</a>
+                <a [class.active]="filterQuery === 'self-service'" (click)="filterService('self-service')">Self
+                    Service</a>
+                <a [class.active]="filterQuery === 'others'" (click)="filterService('others')">Others</a>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4" *ngFor="let service of services">
+                    <a class="service-card"
+                        [routerLink]="['/schedule/enquiry/' + service.title.split(' ').join('-').toLowerCase()]"
+                        [state]="service">
+                        <img [src]="service.shape" height="100" />
+                        <div class="info">
+                            <label>{{service.tag}}</label>
+                            <p>{{service.title}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

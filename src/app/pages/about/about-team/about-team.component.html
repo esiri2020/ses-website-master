@@ -1,0 +1,17 @@
+<section class="about-team">
+    <div class="container">
+        <h2 class="heading">We’re an agile company <br />lead by <em>brilliant minds.</em></h2>
+        <p>Meet our team</p>
+
+        <div class="team-list">
+            <div class="member" *ngFor="let member of team">
+                <div class="image">
+                    <img [src]="member.photo" [alt]="member.name" />
+                </div>
+                <p>{{member.name}}</p>
+                <label>{{member.role}}</label>
+            </div>
+        </div>
+
+    </div>
+</section>

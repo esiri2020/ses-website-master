@@ -1,0 +1,88 @@
+.home-brief {
+    position: relative;
+    padding-bottom: 30vh;
+    .quote {
+        position: relative;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 25%;
+            background-color: rgba($yellow, 0.1);
+        }
+        h3 {
+            font-size: 3.75rem;
+            font-weight: 400;
+            line-height: 110%;
+            padding: 0.5em 1em 0.5em 0;
+        }
+    }
+
+    p {
+        margin-top: 3em;
+        width: 45%;
+    }
+
+    .image {
+        position: absolute;
+        right: 0;
+        top: 35%;
+        width: 40vw;
+        background-color: lighten($yellow, 15%);
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@include media("<=tablet2x") {
+    .home-brief {
+        .quote {
+            h3 {
+                font-size: 3.125rem;
+            }
+        }
+    }
+}
+
+@include media("<=tablet") {
+    .home-brief {
+        padding-bottom: 22vh;
+        .quote {
+            h3 {
+                font-size: 2.5rem;
+            }
+        }
+        p {
+            width: 75%;
+        }
+        .image {
+            top: auto;
+            left: 0;
+            bottom: 0;
+            width: auto;
+            height: 18vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+@include media("<=phone2x") {
+    .home-brief {
+        .quote {
+            h3 {
+                font-size: 2rem;
+                padding-right: 0;
+            }
+        }
+        p {
+            width: 95%;
+        }
+    }
+}

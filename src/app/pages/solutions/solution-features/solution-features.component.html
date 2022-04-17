@@ -1,0 +1,13 @@
+<section class="solution-features">
+    <div class="container">
+        <h3 [innerHTML]="data?.heading"></h3>
+        <p>{{data?.description}}</p>
+
+        <div class="feature-list row">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of data?.list">
+                <ses-listgrid-card [type]="'short'" [data]="item">
+                </ses-listgrid-card>
+            </div>
+        </div>
+    </div>
+</section>

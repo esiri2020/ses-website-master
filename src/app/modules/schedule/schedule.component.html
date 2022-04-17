@@ -1,0 +1,18 @@
+<ses-header></ses-header>
+<main>
+    <ses-hero [title]="heroTitle" [description]="heroDesp" [showSearch]="true"
+        [searchText]="'Search preferred content'"></ses-hero>
+
+    <section class="schedule-start">
+        <div class="container">
+            <div class="start-box">
+                <h3>What services are you interested in?</h3>
+                <a class="btn btn-primary">
+                    <span>Click to Select</span>
+                    <i class="mdi mdi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<router-outlet></router-outlet>

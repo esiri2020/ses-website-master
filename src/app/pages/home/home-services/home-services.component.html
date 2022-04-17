@@ -1,0 +1,33 @@
+<section class="home-services">
+    <div class="container">
+        <h2 class="heading">What <br /><em>We do</em></h2>
+
+        <div class="row service-compliance">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of services.filter(complianceFilter)">
+                <ses-listgrid-card [type]="'full'" [data]="item">
+                </ses-listgrid-card>
+            </div>
+        </div>
+
+        <div class="row service-self">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of services.filter(selfFliter)">
+                <ses-listgrid-card [type]="'full'" [data]="item">
+                </ses-listgrid-card>
+            </div>
+        </div>
+
+        <div class="row service-security">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of services.filter(securityFilter)">
+                <ses-listgrid-card [type]="'full'" [data]="item">
+                </ses-listgrid-card>
+            </div>
+        </div>
+
+        <div class="service-plain">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of services.filter(plainFilter)">
+                <ses-listgrid-card [type]="'full'" [data]="item">
+                </ses-listgrid-card>
+            </div>
+        </div>
+    </div>
+</section>

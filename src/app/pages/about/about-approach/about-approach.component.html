@@ -1,0 +1,13 @@
+<section class="about-approach">
+    <div class="container">
+        <h2 class="heading">Our <br /><em>Triple D</em><br />Approach</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of approaches">
+                <img [src]="item.icon" />
+                <h5>{{item.title}}</h5>
+                <p>{{item.description}}</p>
+            </div>
+        </div>
+    </div>
+</section>

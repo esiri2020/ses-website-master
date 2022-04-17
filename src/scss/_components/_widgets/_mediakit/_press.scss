@@ -1,0 +1,134 @@
+.mediakit-press {
+    position: relative;
+    padding-top: 17.5em;
+    padding-bottom: 8em;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        bottom: 0%;
+        height: 90%;
+        background: linear-gradient(180deg, #f68633 81.69%, rgba(246, 134, 51, 0) 100%);
+        opacity: 0.06;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        width: 240px;
+        height: 220px;
+        background-image: url("/assets/img/svg/art-boxes.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    & > * {
+        position: relative;
+        z-index: 3;
+    }
+    .press-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1em;
+        margin-bottom: 3em;
+        background-color: $white;
+        height: 390px;
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            background-color: rgba($orange, 0.06);
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .info {
+            padding: 1.25em 0.5em 1em 0.5em;
+            a {
+                text-decoration: none;
+                h5 {
+                    line-height: 115%;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                    color: $black;
+                }
+            }
+            .props {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                span {
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    color: rgba($black, 0.6);
+                }
+            }
+        }
+        &.full {
+            position: relative;
+            flex-direction: row;
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                left: 5%;
+                right: 5%;
+                bottom: 0;
+                height: 80%;
+                box-shadow: 0px 10px 30px rgba($orange, 0.2);
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-color: $white;
+            }
+            & > * {
+                position: relative;
+                z-index: 3;
+            }
+            .image {
+                width: 50%;
+                height: 100%;
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+            .info {
+                position: relative;
+                width: calc(50% - 1.5em);
+                height: 100%;
+                padding-right: 2em;
+
+                p {
+                    font-size: 0.875rem;
+                }
+                .props {
+                    position: absolute;
+                    left: 0.5em;
+                    right: 0.5em;
+                    bottom: 1em;
+                }
+            }
+        }
+    }
+}

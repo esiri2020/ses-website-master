@@ -1,0 +1,74 @@
+.legal,
+.help-faq {
+    margin-top: -50px;
+    background-color: $white;
+    margin-bottom: 15em;
+    overflow: initial;
+    .content-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        overflow: initial;
+
+        aside {
+            position: sticky;
+            top: 120px;
+            width: 25%;
+            padding-right: 2em;
+            ul {
+                padding-left: 0;
+                margin: 0;
+                li {
+                    list-style: none;
+                    margin-bottom: 2.5em;
+                    cursor: pointer;
+                    a {
+                        font-size: 1.875rem;
+                        font-weight: 700;
+                        color: rgba($black, 0.6);
+                    }
+                    &.active a {
+                        color: $orange;
+                    }
+                }
+            }
+        }
+        .content {
+            width: 75%;
+            border-left: 1px solid $orange;
+            padding-left: 3em;
+            .info {
+                margin-bottom: 3em;
+                padding-bottom: 3em;
+                border-bottom: 1px solid rgba($orange, 0.2);
+                h4 {
+                    font-size: 20px;
+                    color: $black;
+                    margin-bottom: 15px;
+                    margin-top: 20px;
+                }
+                p {
+                    font-size: 14px;
+                }
+                ul {
+                    padding-left: 15px;
+                    li {
+                        list-style-position: outside;
+                        list-style-image: url("/assets/img/svg/icon-bullet-round.svg");
+                        padding-left: 10px;
+                        color: rgba($black, 0.6);
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.help-faq {
+    .content-wrap {
+        .content {
+            border-left: none;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<section class="help-faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-9 m-auto content-wrap">
+                <aside>
+                    <ul>
+                        <li *ngFor="let item of faqs" [id]="'nav-'+getRefId(item)">
+                            <a [ngxScrollTo]="getRefId(item)" [ngxScrollToOffset]="scrollOffset">{{item.heading}}</a>
+                        </li>
+
+                    </ul>
+                </aside>
+                <div class="content">
+                    <div class="info" *ngFor="let item of faqs, let x = index" [id]="getRefId(item)">
+                        <ngb-accordion #acc="ngbAccordion" activeIds="faq-0-0">
+                            <ngb-panel *ngFor="let faq of item.list; let i = index" [id]="'faq-'+ x + '-' + i">
+                                <ng-template ngbPanelHeader let-opened="opened">
+                                    <button class="heading" ngbPanelToggle>
+                                        <h4>{{faq?.question}}</h4>
+                                        <i *ngIf="!opened" class="mdi mdi-plus"></i>
+                                        <i *ngIf="opened" class="mdi mdi-minus"></i>
+                                    </button>
+                                </ng-template>
+                                <ng-template ngbPanelContent>
+                                    <p>{{faq?.answer}}</p>
+                                </ng-template>
+                            </ngb-panel>
+                        </ngb-accordion>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

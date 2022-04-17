@@ -1,0 +1,35 @@
+<section class="solution-contact" *ngIf="data" id="contact-person">
+    <div class="container">
+        <div class="contact-person">
+            <div class="heading">
+                <h3>Learn how we can help you <em>get started</em> with <em>{{serviceTitle}}</em> </h3>
+
+                <a class="btn btn-secondary" [routerLink]="['/schedule/' + serviceId]">
+                    <span>Schedule a Meeting</span>
+                    <i class="mdi mdi-arrow-right"></i>
+                </a>
+            </div>
+            <img src="/assets/img/svg/art-arrow-border.svg" />
+            <div class="person">
+                <div>
+                    <p>{{data?.name}}</p>
+                    <label>{{data?.role}}</label>
+                </div>
+
+                <div class="actions">
+                    <a class="btn btn-link" [href]="'mailto:' + data?.email">
+                        <span>Contact</span>
+                        <i class="mdi mdi-arrow-top-right"></i>
+                    </a>
+
+                    <a class="social" [href]="data?.linkedin">
+                        <i class="mdi mdi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="image">
+                <img [src]="data?.photo" />
+            </div>
+        </div>
+    </div>
+</section>

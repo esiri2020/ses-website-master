@@ -1,0 +1,131 @@
+<nav class="sidenav" [class.shown]="show">
+    <div class="sidenav-head">
+        <a class="btn btn-link" (click)="openReachoutCard()">
+            <span>Reach out</span>
+            <i class="mdi mdi-arrow-right"></i>
+        </a>
+        <a class="close-btn" (click)="closeSidenav()">
+            <i class="mdi mdi-close"></i>
+        </a>
+    </div>
+    <div class="sidenav-content">
+        <ul>
+            <li class="has-menu">
+                <a>
+                    <span>Solutions</span>
+                    <i class="mdi mdi-chevron-down"></i>
+                </a>
+                <label>Compliance Solutions</label>
+                <ul>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/anti-fraud']">
+                            <span>Anti-Fraud</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/anti-money-laundering']">
+                            <span>Anti-Money Laundering</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/onboarding-client-life-cycle-management']">
+                            <span>Onboarding & Client Life Cycle Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/enterprise-information-managemnt-ecm']">
+                            <span>Enterprise Information Management / ECM</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/adaptive-case-manager']">
+                            <span>Adaptive Case Manager</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr />
+                <label>Applications Security</label>
+                <ul>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/web-banking-applications']">
+                            <span>Web Banking Applications</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/mobile-banking-applications']">
+                            <span>Mobile Banking Applications</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr />
+                <label>Self Service Solutions</label>
+                <ul>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/kiosk-self-service']">
+                            <span>Kiosk Self Service</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/smart-pos-service']">
+                            <span>Smart POS Service</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/atm-service']">
+                            <span>ATM Service</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr />
+                <ul>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/payment-solution']">
+                            <span>Payment Solutions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/power-solutions']">
+                            <span>Power Solutions</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="menu-link" [routerLink]="['/solution/application-development']">
+                            <span>Application Development</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a [routerLink]="['/partners']">
+                    <span>Partners</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/resources']">
+                    <span>Resouces</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/about']">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/careers']">
+                    <span>Careers</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/contact']">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="sidenav-actions">
+        <a class="btn btn-primary small">
+            <span>Schedule Appointment</span>
+            <i class="mdi mdi-arrow-right"></i>
+        </a>
+    </div>
+</nav>

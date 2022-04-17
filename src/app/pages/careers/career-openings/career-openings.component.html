@@ -1,0 +1,59 @@
+<section class="career-openings" id="jobs">
+    <div class="container">
+        <h3>Job Openings</h3>
+
+        <div class="row forms">
+            <div class="col-12 col-md-6">
+                <div class="input">
+                    <input type="text" placeholder="Search by job title" />
+                    <i class="mdi mdi-magnify"></i>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="input">
+                    <select>
+                        <option disabled selected value="">Work Type</option>
+                        <option>IT</option>
+                        <option>Design</option>
+                        <option>Business</option>
+                    </select>
+                    <i class="mdi mdi-chevron-down"></i>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="input">
+                    <select>
+                        <option disabled selected value="">Department</option>
+                        <option>IT</option>
+                        <option>Design</option>
+                        <option>Business</option>
+                    </select>
+                    <i class="mdi mdi-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row job-list">
+            <div class="col-12" *ngFor="let item of jobs">
+                <div class="item">
+                    <div class="info">
+                        <h3>{{item.title}}</h3>
+                        <div class="props">
+                            <span>{{item.type}}</span>
+                            <span>{{item.department}}</span>
+                            <span *ngIf="item.experienceNeeded == 1">{{item.experienceNeeded}} year exp</span>
+                            <span *ngIf="item.experienceNeeded > 1">{{item.experienceNeeded}} years exp</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary small"
+                        [routerLink]="['/careers/'+ item.title.split(' ').join('-').toLowerCase() +'/apply']">
+                        <span>Apply Now</span>
+                        <i class="mdi mdi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

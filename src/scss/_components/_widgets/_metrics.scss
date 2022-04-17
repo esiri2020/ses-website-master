@@ -1,0 +1,49 @@
+.metrics {
+    padding: 6.5em 0;
+    .metric {
+        position: relative;
+        text-align: center;
+        background-image: url("/assets/img/svg/art-metric-1.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        strong {
+            font-size: 2.813rem;
+            color: $black;
+            span {
+                font-size: 1.875rem;
+                opacity: 0.35;
+                font-weight: 600;
+            }
+        }
+
+        label {
+            display: block;
+            color: $black;
+            font-size: 1.125rem;
+            line-height: 140%;
+            font-weight: 600;
+            padding: 1.35em 30% 0 30%;
+        }
+    }
+    .row > div:nth-child(2) .metric {
+        background-image: url("/assets/img/svg/art-metric-2.svg");
+    }
+    .row > div:nth-child(3) .metric {
+        background-image: url("/assets/img/svg/art-metric-3.svg");
+    }
+    .row > div:nth-child(4) .metric {
+        background-image: url("/assets/img/svg/art-metric-4.svg");
+    }
+}
+
+@include media("<=tablet") {
+    .metrics {
+        .metric {
+            margin-bottom: 3em;
+            label {
+                padding: 1.35em 15% 0 15%;
+            }
+        }
+    }
+}

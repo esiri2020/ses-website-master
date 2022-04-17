@@ -1,0 +1,22 @@
+<section class="legal">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-9 m-auto content-wrap">
+                <aside>
+                    <ul>
+                        <li *ngFor="let item of contents" [id]="'nav-'+getRefId(item)">
+                            <a [ngxScrollTo]="getRefId(item)" [ngxScrollToOffset]="scrollOffset">{{item.title}}</a>
+                        </li>
+
+                    </ul>
+                </aside>
+                <div class="content">
+                    <div class="info" *ngFor="let item of contents" [id]="getRefId(item)">
+                        <h4>{{item.title}}</h4>
+                        <div [innerHTML]="item.content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

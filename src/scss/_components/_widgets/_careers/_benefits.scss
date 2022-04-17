@@ -1,0 +1,57 @@
+.career-benefits {
+    position: relative;
+    margin-top: 2em;
+    padding-top: 16.5em;
+    padding-bottom: 8em;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 85%;
+        background-color: rgba($orange, 0.06);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        left: 0;
+        top: 0;
+        width: 240px;
+        height: 220px;
+        background-image: url("/assets/img/svg/art-boxes.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .container {
+        position: relative;
+        z-index: 3;
+        .list-card {
+            height: 225px;
+        }
+    }
+}
+
+@include media("<tablet") {
+    .career-benefits {
+        padding-top: 10rem;
+        padding-bottom: 6rem;
+        &:after {
+            background: none;
+        }
+    }
+}
+
+@include media("<phone2x") {
+    .career-benefits {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        &:after {
+            background: none;
+        }
+    }
+}

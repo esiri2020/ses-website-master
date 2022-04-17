@@ -1,0 +1,20 @@
+<ses-header></ses-header>
+<main>
+    <ses-hero [showImage]="true" [imageUrl]="activeService?.coverImage" [label]="activeService?.tag"
+        [title]="activeService?.title" [description]="activeService?.description" [buttonText]="'Get Started'"
+        [buttonUrl]="'#contact-person'"></ses-hero>
+
+    <ses-solution-contact *ngIf="activeService?.contactPerson" [data]="activeService?.contactPerson"
+        [serviceId]="activeService?.id" [serviceTitle]="activeService?.title">
+    </ses-solution-contact>
+
+    <ses-solution-features *ngIf="activeService?.features" [data]="activeService?.features"></ses-solution-features>
+
+    <ses-solution-benefits *ngIf="activeService?.benefits" [data]="activeService?.benefits"></ses-solution-benefits>
+
+    <ses-solution-photos></ses-solution-photos>
+
+    <ses-testimonial *ngIf="activeService?.testimonial" [data]="activeService?.testimonial"></ses-testimonial>
+</main>
+
+<ses-footer></ses-footer>

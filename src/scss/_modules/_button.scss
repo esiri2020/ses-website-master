@@ -1,0 +1,128 @@
+.btn {
+    display: inline-flex;
+    outline: none;
+    box-shadow: none;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    cursor: pointer;
+
+    &.btn-primary {
+        text-transform: capitalize;
+        background: $yellow;
+        border-radius: 30px;
+        color: $black;
+        padding: 0.8em 1.8em;
+        outline: none;
+        border: none;
+        &:hover,
+        &:active,
+        &:focus {
+            outline: none !important;
+            border: none !important;
+            background-color: darken($yellow, 5%) !important;
+            color: $black !important;
+        }
+        span {
+            display: inline-block;
+            margin-top: 2px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            line-height: 135%;
+        }
+
+        i {
+            display: inline-flex;
+            margin-left: 15px;
+            font-size: 24px;
+        }
+
+        &:hover i {
+            animation: shakeRight 800ms ease-out alternate;
+        }
+        &.dir-up:hover i {
+            animation: shakeUp 800ms ease-out alternate;
+        }
+
+        &.large {
+            font-size: 1.25rem;
+            border-radius: 10px;
+            i {
+                font-size: 20px !important;
+            }
+        }
+
+        &.small {
+            font-size: 0.875rem;
+            padding: 0.8em 1.5em;
+            i {
+                font-size: 20px !important;
+            }
+        }
+    }
+
+    &.btn-secondary {
+        text-transform: capitalize;
+        background: $white;
+        border-radius: 30px;
+        color: $black;
+        padding: 0.5em 1.25em;
+        border: 1px solid $yellow;
+        outline: none;
+        &:hover,
+        &:active,
+        &:focus {
+            outline: none !important;
+            background-color: $yellow !important;
+            color: $black !important;
+        }
+        span {
+            display: inline-block;
+            margin-top: 2px;
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 135%;
+        }
+
+        i {
+            display: inline-flex;
+            margin-left: 15px;
+            font-size: 22px;
+        }
+
+        &:hover i {
+            animation: shakeRight 800ms ease-out alternate;
+        }
+    }
+
+    &.btn-link {
+        color: $orange;
+        span {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        i {
+            display: inline-flex;
+            margin-left: 10px;
+            font-size: 20px !important;
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: $black;
+            i {
+                animation: shakeRight 800ms ease-out alternate;
+            }
+        }
+    }
+}
+
+@include media("<=tablet") {
+    .btn.btn-primary {
+        padding: 0.65em 1.4em;
+        span {
+            font-size: 0.875rem;
+        }
+    }
+}

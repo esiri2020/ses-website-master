@@ -1,0 +1,533 @@
+$sm-padding: 35px;
+
+// Page -> Header
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: $offwhite;
+    border-bottom: 1px solid $yellow;
+    padding: 2em 7.5em 1.8em 7.5em;
+    .row {
+        align-items: center;
+        > div {
+            &:last-child {
+                text-align: right;
+                .menu-btn {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    nav {
+        display: inline-flex;
+        align-items: center;
+        .logo {
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            .logo-white {
+                display: none;
+                width: auto;
+                height: 25px;
+            }
+            .logo-black {
+                width: auto;
+                height: 25px;
+            }
+        }
+
+        & > ul {
+            width: auto;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 0;
+            margin-bottom: 0;
+            margin-left: 2em;
+            margin-top: 4px;
+            li {
+                display: inline-flex;
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    padding: 0 1rem;
+                    cursor: pointer;
+                    span {
+                        color: $black;
+                        font-size: 1em;
+                        font-weight: 800;
+                    }
+                    i {
+                        display: inline-block;
+                        color: $orange;
+                        font-size: 18px;
+                        margin-bottom: -2px;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+                &.has-menu {
+                    .sub-menu {
+                        visibility: hidden;
+                        position: absolute;
+                        opacity: 0;
+                        top: 15px;
+                        left: 0;
+                        right: 0;
+                        width: 100%;
+                        min-height: 150px;
+                        padding-top: 25px;
+                        transform: translateY(30px);
+                        transition: transform 100ms cubic-bezier(0.6, 0.04, 0.98, 0.335),
+                            visibility 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335),
+                            opacity 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+                        &:active {
+                            visibility: hidden;
+                        }
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            left: calc(50% - 20px);
+                            top: 20px;
+                            width: 20px;
+                            height: 20px;
+                            background-color: $white;
+                            transform: rotate(45deg);
+                        }
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            width: 150px;
+                            height: 150px;
+                            background-image: url("/assets/img/svg/art-boxes.svg");
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center bottom;
+                        }
+                        .menu-container {
+                            background-color: $white;
+                            box-shadow: 0px 10px 40px rgba($black, 0.2);
+
+                            ul {
+                                margin: 0;
+                                padding: 2em $sm-padding;
+                                li {
+                                    display: block;
+                                    padding: 0.35em 0;
+                                    &:last-child {
+                                        padding-bottom: 0;
+                                    }
+                                    .menu-link {
+                                        font-size: 0.95rem;
+                                        padding: 0;
+                                        span {
+                                            color: rgba($black, 0.7);
+                                        }
+                                        &:hover span {
+                                            color: $orange;
+                                        }
+                                    }
+                                }
+                            }
+
+                            label {
+                                font-weight: bold;
+                                font-size: 11px;
+                                line-height: 100%;
+                                text-transform: uppercase;
+                                color: $orange;
+                                margin-bottom: 0;
+                            }
+
+                            & > div {
+                                &.bottom {
+                                    position: relative;
+                                    margin: 1em $sm-padding 0 $sm-padding;
+                                    padding-top: 1em;
+                                    padding-bottom: 2em;
+                                    &:before {
+                                        content: "";
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        width: 30px;
+                                        height: 3px;
+                                        background-color: $yellow;
+                                    }
+                                    .tiny-link {
+                                        display: flex;
+                                        justify-content: flex-start;
+                                        align-items: center;
+                                        padding: 0.2em 0;
+                                        opacity: 0.7;
+                                        span {
+                                            font-size: 12px;
+                                            font-weight: 500;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.company {
+                            left: 47px;
+                            right: auto;
+                            width: 265px;
+                        }
+                        &.resource {
+                            &::before {
+                                left: auto;
+                                right: 60px;
+                            }
+                            .menu-container {
+                                .feat-vid {
+                                    display: inline-block;
+                                    padding: 0;
+                                    background-color: $yellow;
+                                    text-align: center;
+                                    padding: 3.5em 1.5em 1em 1.5em;
+                                    width: calc(60% - 2em);
+                                    margin-top: 1.3em;
+                                    border-radius: 2px;
+                                    vertical-align: top;
+                                    & > i {
+                                        font-size: 55px;
+                                        color: $red;
+                                        margin: 0;
+                                    }
+                                    label {
+                                        display: block;
+                                        text-align: left;
+                                        margin: 3em 0 0.8em 0;
+                                    }
+                                    p {
+                                        margin: 0 0 0;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        opacity: 0.7;
+                                        text-align: left;
+                                        span {
+                                            text-transform: capitalize;
+                                            line-height: 140%;
+                                        }
+                                        i {
+                                            font-size: 25px;
+                                        }
+                                    }
+                                }
+
+                                & > div:first-child {
+                                    display: inline-block;
+                                    width: 40%;
+                                    margin-right: 1em;
+                                    border-right: 1px solid rgba($black, 0.1);
+                                    margin-top: 1.5em;
+                                    min-height: 205px;
+                                    ul {
+                                        padding-top: 0 !important;
+                                    }
+                                }
+
+                                .bottom {
+                                    &:before {
+                                        left: $sm-padding;
+                                    }
+                                    width: 100%;
+                                    border: none;
+                                    background-color: rgba($offwhite, 0.6);
+                                    margin-left: 0;
+                                    padding-left: $sm-padding;
+                                    i {
+                                        color: rgba($black, 0.7);
+                                        font-size: 15px;
+                                        margin-left: 8px;
+                                    }
+                                }
+                            }
+                        }
+                        &.solution {
+                            width: 650px;
+                            &::before {
+                                left: 40px;
+                                right: auto;
+                            }
+                            .menu-container > div {
+                                display: inline-block;
+                                width: calc(50% - 1em);
+                                vertical-align: top;
+                                margin-top: 1.3em;
+                                margin-bottom: 1.5em;
+                                &:first-child {
+                                    border-right: 1px solid rgba($black, 0.1);
+                                    width: 50%;
+                                    padding-bottom: 3.5em;
+                                }
+                                label {
+                                    margin-left: $sm-padding;
+                                }
+                                ul {
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                }
+                                hr {
+                                    width: 30px;
+                                    border: 2px solid $yellow;
+                                    padding: 0;
+                                    margin: 1.1em 0.5em 1em $sm-padding;
+                                }
+                            }
+                        }
+                    }
+                    &:hover .sub-menu,
+                    &.active .sub-menu {
+                        visibility: visible;
+                        opacity: 1;
+                        transform: translateY(0px);
+                    }
+                }
+            }
+        }
+    }
+
+    &.light {
+        background-color: transparent;
+        nav {
+            .logo {
+                .logo-white {
+                    display: inline-block;
+                }
+                .logo-black {
+                    display: none;
+                }
+            }
+
+            & > ul li > a {
+                span {
+                    color: $white;
+                    font-weight: 700;
+                }
+                i {
+                    color: $yellow;
+                }
+            }
+        }
+        .btn-link {
+            color: $yellow;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    // Header -> Reachout
+    .reach-out {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background-color: $white;
+        box-shadow: 0px 10px 40px rgba($black, 0.2);
+        padding: 3em 2.5em;
+        overflow: hidden;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        transition: transform 200ms cubic-bezier(0.645, 0.045, 0.355, 1),
+            opacity 300ms cubic-bezier(0.47, 0, 0.745, 0.715);
+        .close-btn {
+            cursor: pointer;
+            text-decoration: none;
+            i {
+                font-size: 1.75rem;
+                color: $orange;
+            }
+        }
+        p {
+            margin: 2em 0;
+            label {
+                display: block;
+                color: $orange;
+                font-size: 1.563rem;
+                font-weight: 700;
+                margin-bottom: 0;
+                line-height: 140%;
+            }
+            strong {
+                color: $black;
+                font-size: 1.875rem;
+                font-weight: 700;
+                &.em {
+                    font-weight: 800;
+                    opacity: 0.3;
+                }
+            }
+        }
+        .comp-card {
+            position: relative;
+            background-color: $offwhite;
+            border: 1px solid rgba($black, 0.15);
+            padding: 1.5em 1.2em 1.5em 2em;
+            margin-bottom: 2em;
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                left: 10%;
+                right: 10%;
+                bottom: 0;
+                height: 50px;
+                box-shadow: 0px 10px 30px rgba($orange, 0.2);
+                opacity: 0;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-color: lighten($offwhite, 1.5%);
+            }
+            .company {
+                position: relative;
+                z-index: 5;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                img {
+                    max-height: 35px;
+                    max-width: 145px;
+                }
+                i {
+                    font-size: 1.5rem;
+                    color: rgba($black, 0.3);
+                }
+            }
+            .links {
+                visibility: hidden;
+                height: 0;
+                opacity: 0;
+                position: relative;
+                z-index: 5;
+                transition: height 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+                    opacity 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                a {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    text-decoration: none;
+                    i {
+                        font-size: 1.25rem;
+                        color: rgba($black, 0.3);
+                        margin-right: 1.2em;
+                    }
+                    span {
+                        font-size: 0.875rem;
+                        color: $black;
+                        line-height: 100%;
+                    }
+                    &:hover span {
+                        color: $orange;
+                        text-decoration: underline;
+                    }
+                    &:first-child span {
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            &:hover,
+            &.active {
+                &::before {
+                    opacity: 1;
+                }
+                &::after {
+                    background-color: $white;
+                }
+                .links {
+                    visibility: visible;
+                    opacity: 1;
+                    padding-top: 1.5em;
+                    height: 120px;
+                }
+            }
+        }
+
+        &.closed {
+            transform: translateX(480px);
+            opacity: 0;
+        }
+        &.opened {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+}
+
+@include media("<=tablet2x") {
+    header {
+        padding: 2em 0 1.8em 0;
+        nav ul li a {
+            padding: 0 0.65em;
+        }
+    }
+}
+@include media("<=tablet") {
+    header {
+        .row {
+            align-items: center;
+            > div {
+                &:last-child {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    text-align: right;
+                    .menu-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $black;
+                        color: $white;
+                        border-radius: 20px;
+                        height: 40px;
+                        width: 40px;
+                        margin-left: 1em;
+                        text-decoration: none;
+                        i {
+                            font-size: 1.65rem;
+                        }
+                    }
+                }
+            }
+        }
+        nav ul {
+            display: none;
+        }
+    }
+}
+@include media("<=phone2x") {
+    header {
+        .row {
+            align-items: center;
+            > div {
+                &:last-child {
+                    .btn-link {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

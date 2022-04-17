@@ -1,0 +1,30 @@
+<ses-header></ses-header>
+<main>
+    <section class="resource-hero article">
+        <div class="container">
+            <div class="info">
+                <a class="btn btn-link" [routerLink]="['/resources']">
+                    <i class="mdi mdi-arrow-left"></i>
+                    <span>Back to Resources</span>
+                </a>
+                <h3>{{article.title}}</h3>
+                <div class="props">
+                    <strong>{{article.author}}</strong>
+                    <span>{{article.date | date:'mediumDate'}}</span>
+                    <span>{{article.readDuration}} mins</span>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img [src]="article.coverImage" [alt]="article.title" />
+        </div>
+    </section>
+    <section class="resource-content article">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-9 m-auto" [innerHTML]="article.content"></div>
+            </div>
+        </div>
+    </section>
+</main>
+<ses-footer></ses-footer>

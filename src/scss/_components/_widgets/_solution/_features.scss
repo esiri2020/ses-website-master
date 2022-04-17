@@ -1,0 +1,29 @@
+.solution-features {
+    position: relative;
+    padding: 6em 0;
+    z-index: 5;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -18em;
+        bottom: -6em;
+        background-color: rgba($orange, 0.06);
+    }
+
+    .container {
+        h3 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        & > p {
+            width: 55%;
+            font-size: 1rem;
+            margin-bottom: 3.5em;
+        }
+    }
+}
+
+@include media("<=tablet2x") {
+}

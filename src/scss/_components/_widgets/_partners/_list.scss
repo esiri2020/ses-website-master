@@ -1,0 +1,86 @@
+.partner-list {
+    position: relative;
+    margin-top: -75px;
+    .content {
+        display: none;
+        &.active {
+            display: block;
+            margin-top: 3em;
+            margin-bottom: 8em;
+        }
+
+        .partner-card {
+            position: relative;
+            text-align: center;
+            margin-bottom: 4em;
+            padding: 2em 0.5em 1.5em 0.5em;
+            cursor: pointer;
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                left: 5%;
+                right: 5%;
+                top: 1%;
+                bottom: 0;
+                box-shadow: 0px 10px 30px rgba($orange, 0.2);
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 2;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-color: $white;
+            }
+
+            & > * {
+                position: relative;
+                z-index: 3;
+            }
+            .image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 85px;
+                img {
+                    max-height: 100%;
+                    max-width: 145px;
+                }
+            }
+            p {
+                font-size: 1.125rem;
+                color: $black;
+                font-weight: 700;
+                margin: 1.5em 0 0.35em 0;
+            }
+            label {
+                font-size: 0.875rem;
+                color: rgba($black, 0.5);
+                font-weight: 500;
+            }
+            a {
+                display: none;
+                margin: 0;
+                padding: 0;
+                span {
+                    font-size: 0.875rem !important;
+                }
+            }
+            &:hover {
+                a {
+                    display: inline-flex;
+                }
+                label {
+                    display: none;
+                }
+                &:before {
+                    box-shadow: 0px 20px 40px rgba($orange, 0.4);
+                }
+            }
+        }
+    }
+}

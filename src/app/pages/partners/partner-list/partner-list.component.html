@@ -1,0 +1,44 @@
+<section class="partner-list">
+    <div class="container">
+        <div class="link-tab">
+            <a class="active" (click)="toggleContent($event, clientsEl)">Clients</a>
+            <a (click)="toggleContent($event, partnersEl)">Partners</a>
+        </div>
+    </div>
+
+    <div class="container content active" #clientsEl>
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-3" *ngFor="let item of clients">
+                <div class="partner-card">
+                    <div class="image">
+                        <img [src]="item?.logo" />
+                    </div>
+                    <p>{{item?.name}}</p>
+                    <label>{{item?.industry}}</label>
+                    <a class="btn btn-link" [href]="item?.website">
+                        <span>Visit Website</span>
+                        <i class="mdi mdi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container content" #partnersEl>
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-3" *ngFor="let item of partners">
+                <div class="partner-card">
+                    <div class="image">
+                        <img [src]="item?.logo" />
+                    </div>
+                    <p>{{item?.name}}</p>
+                    <label>{{item?.industry}}</label>
+                    <a class="btn btn-link" [href]="item?.website">
+                        <span>Visit Website</span>
+                        <i class="mdi mdi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

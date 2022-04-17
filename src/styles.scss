@@ -1,0 +1,10 @@
+/* External library css imports */
+// --- CSS
+@import "../node_modules/animate.css/animate.compat.css";
+
+// --- SASS
+@import "../node_modules/@mdi/font/scss/materialdesignicons.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+/* You can add global styles to this file, and also import other style files */
+@import "./scss/export";

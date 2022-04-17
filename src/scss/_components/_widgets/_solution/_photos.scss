@@ -1,0 +1,16 @@
+.solution-photos {
+    position: relative;
+    margin: 8em 0;
+    img {
+        display: inline-block;
+        margin-right: 1em;
+        width: auto;
+        height: 400px;
+        &:first-child {
+            margin-left: 5em;
+        }
+        &:last-child {
+            margin-right: 5em;
+        }
+    }
+}

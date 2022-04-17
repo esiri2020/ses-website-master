@@ -1,0 +1,48 @@
+<section class="hero plain" *ngIf="!showImage">
+    <div class="container">
+        <div class="info">
+            <h2 [innerHTML]="title"></h2>
+            <p>{{description}}</p>
+            <a class="btn btn-primary" *ngIf="showButton && actionType === 'link'" [routerLink]="[buttonUrl]">
+                <span>{{buttonText}}</span>
+                <i class="mdi mdi-arrow-right"></i>
+            </a>
+
+            <!-- ng-scroll-to here -->
+            <a class="btn btn-primary dir-up" *ngIf="showButton && actionType === 'scroll'" [ngxScrollTo]="buttonUrl">
+                <span>{{buttonText}}</span>
+                <i class="mdi mdi-arrow-down"></i>
+            </a>
+
+            <a class="btn btn-primary dir-up" *ngIf="showButton && actionType === 'download'"
+                [routerLink]="[buttonUrl]">
+                <span>{{buttonText}}</span>
+                <i class="mdi mdi-download-outline"></i>
+            </a>
+
+            <form class="search-form" *ngIf="showSearch">
+                <div class="input">
+                    <i class="mdi mdi-magnify"></i>
+                    <input type="search" [placeholder]="searchText" />
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="hero illustrated" *ngIf="showImage">
+    <div class="container">
+        <div class="info">
+            <label>{{label}}</label>
+            <h2 [innerHTML]="title"></h2>
+            <p>{{description}}</p>
+            <a class="btn btn-primary dir-up" [ngxScrollTo]="buttonUrl" [ngxScrollToOffset]="-50">
+                <span>{{buttonText}}</span>
+                <i class="mdi mdi-arrow-down"></i>
+            </a>
+        </div>
+    </div>
+    <div class="image">
+        <img [src]="imageUrl" alt="title" />
+    </div>
+</section>

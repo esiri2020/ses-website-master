@@ -1,0 +1,45 @@
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+/* SASS Variables */
+$black: #231f20;
+$white: #ffffff;
+$offwhite: #f5f5f5;
+$gray: #d6d6d6;
+$orange: #f68633;
+$green: #4ad090;
+$red: #ff8080;
+$yellow: #ffda68;
+
+/* CSS Variables */
+:root {
+    --black: #{$black};
+    --white: #{$white};
+    --offwhite: #{$offwhite};
+    --gray: #{$gray};
+    --orange: #{$orange};
+    --green: #{$green};
+    --red: #{$red};
+    --yellow: #{$yellow};
+
+    --black-rgb: #{hexToRGB($black)};
+    --white-rgb: #{hexToRGB($white)};
+    --offwhite-rgb: #{hexToRGB($offwhite)};
+    --gray-rgb: #{hexToRGB($gray)};
+    --orange-rgb: #{hexToRGB($orange)};
+    --green-rgb: #{hexToRGB($green)};
+    --red-rgb: #{hexToRGB($red)};
+    --yellow-rgb: #{hexToRGB($yellow)};
+}
+
+//Responsive Varaibles
+$breakpoints: (
+    phone: 320px,
+    phone2x: 480px,
+    tablet: 912px,
+    tablet2x: 1024px,
+    desktop: 1280px,
+    desktop2x: 1440px,
+    desktop3x: 1680px,
+);

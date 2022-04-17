@@ -1,0 +1,10 @@
+<section class="solution-benefits">
+    <div class="container">
+        <div class="benefit-box">
+            <h3 [innerHTML]="data.heading"></h3>
+            <ul>
+                <li *ngFor="let item of data.list">{{item?.title}}</li>
+            </ul>
+        </div>
+    </div>
+</section>

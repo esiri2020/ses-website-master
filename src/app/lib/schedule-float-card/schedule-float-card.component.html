@@ -1,0 +1,18 @@
+<div class="float-card closed" #floatcard>
+    <a class="close-btn" (click)="closeFloatCard()">
+        <i class="mdi mdi-close"></i>
+    </a>
+    <div class="content">
+        <div class="info">
+            <h3>
+                <label>Hi</label><br />
+                What are you <br /><em>looking</em> for?
+            </h3>
+            <p>Let’s help you figure it out</p>
+        </div>
+        <a class="btn btn-secondary" [routerLink]="['/schedule']">
+            <span>Start</span>
+            <i class="mdi mdi-arrow-right"></i>
+        </a>
+    </div>
+</div>

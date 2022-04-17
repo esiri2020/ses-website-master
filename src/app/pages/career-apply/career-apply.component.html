@@ -1,0 +1,9 @@
+<ses-header></ses-header>
+<main>
+    <ses-hero [title]="job.title" [description]="job.description" [showButton]="true" [buttonText]="'Apply Now'"
+        [buttonUrl]="'#apply-form'" [actionType]="'scroll'"></ses-hero>
+
+    <ses-career-info [job]="job"></ses-career-info>
+    <ses-career-form [jobId]="job.id"></ses-career-form>
+</main>
+<ses-footer></ses-footer>

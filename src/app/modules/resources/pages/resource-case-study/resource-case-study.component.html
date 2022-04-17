@@ -1,0 +1,67 @@
+<ses-header></ses-header>
+<main>
+    <section class="resource-hero case-study">
+        <div class="container">
+            <div class="info">
+                <a class="btn btn-link" [routerLink]="['/resources']">
+                    <i class="mdi mdi-arrow-left"></i>
+                    <span>Back to Resources</span>
+                </a>
+                <h3>{{case.title}}</h3>
+                <div class="props">
+                    <strong>{{case.author}}</strong>
+                    <span>{{case.date | date:'mediumDate'}}</span>
+                    <span>{{case.readDuration}} mins</span>
+                </div>
+                <div class="company">
+                    <label>Company:</label>
+                    <a [href]="case?.company?.website">
+                        {{case?.company?.name}}
+                    </a>
+                </div>
+                <div class="metrics">
+                    <div class="metric" *ngFor="let metric of case.metrics">
+                        <p *ngIf="metric.type == 'time'">
+                            <strong [countUp]="metric.value" [options]="countUpOptions"></strong>
+                            <span>mins</span>
+                        </p>
+                        <p *ngIf="metric.type == 'rank'">
+                            <span>#</span>
+                            <strong [countUp]="metric.value" [options]="countUpOptions"></strong>
+                        </p>
+                        <p *ngIf="metric.type == 'count'">
+                            <strong [countUp]="metric.value" [options]="countUpOptions"></strong>
+                        </p>
+                        <p *ngIf="metric.type == 'percentage'">
+                            <strong [countUp]="metric.value" [options]="countUpOptions"></strong>
+                            <span>%</span>
+                        </p>
+                        <label>{{metric.title}}</label>
+                        <p class="metric-info">{{metric.info}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img [src]="case.coverImage" [alt]="case.title" />
+        </div>
+    </section>
+
+    <section class="resource-content case-study">
+        <div class="content-section" *ngFor="let item of case.contents">
+            <div class="container" #container>
+                <div class="row">
+                    <div class="col-12 col-lg-9 m-auto">
+                        <h3>{{item.heading}}</h3>
+                        <div [innerHTML]="item.content"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroller" #scroller *ngIf="item.images">
+                <div class="scroll-wrap">
+                    <img *ngFor="let image of item.images" [src]="image" />
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,40 @@
+<section class="home-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col hero-info">
+                <h1>Infrastructure <br />and Digital <br />Solutions,<br />Your Way.</h1>
+                <p>
+                    As the market leader, we set the pace in the revolution of financial services. Digitalizing
+                    core business processes, we improve customer experience andddress efficiency
+                    challenges.
+                </p>
+                <a class="btn btn-primary" [routerLink]="['/schedule']">
+                    <span>Schedule Appointment</span>
+                    <i class="mdi mdi-arrow-right"></i>
+                </a>
+                <div class="cliams">
+                    <label>Trusted by 1000+ Businesses</label>
+                    <a href="#" target="_blank" *ngFor="let client of clients" [title]="client?.name">
+                        <img [src]="client?.image" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="col hero-carousel">
+                <ngb-carousel *ngIf="qoutes" [wrap]="true" [showNavigationArrows]="false" [interval]="8000">
+                    <ng-template ngbSlide *ngFor="let item of qoutes">
+                        <div class="qoute">
+                            <img [src]="item.image" [alt]="item.name" />
+                            <div class="quote-text">
+                                <i class="mdi mdi-format-quote-open"></i>
+                                <p>{{item.qoute}}</p>
+                                <strong>{{item.name}}</strong>
+                                <label>{{item.role}} - {{item.company}}</label>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+        </div>
+    </div>
+</section>

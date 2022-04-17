@@ -1,0 +1,22 @@
+<section class="contact-map">
+    <div class="container">
+        <ses-location-map (selected)="changeInfo($event)"></ses-location-map>
+        <div class="contact-info">
+            <h3>Our Locations</h3>
+            <div class="info-sec">
+                <h5>{{selectedContact.city}}, {{selectedContact.country}}
+                    <img [src]="getCountryIcon(selectedContact.countryCode)" />
+                </h5>
+                <p [innerHTML]="selectedContact.address"></p>
+            </div>
+
+            <div class="info-sec">
+                <h5>Contact Infomation</h5>
+                <div>
+                    <a *ngFor="let phone of selectedContact.phones" [href]="'tel:' + phone">{{phone}}</a>
+                </div>
+                <a [href]="'mailto:' + selectedContact.emailaddress">{{selectedContact.emailAddress}}</a>
+            </div>
+        </div>
+    </div>
+</section>

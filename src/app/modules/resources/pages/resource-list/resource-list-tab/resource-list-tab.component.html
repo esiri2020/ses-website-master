@@ -1,0 +1,34 @@
+<section class="resource-list">
+    <div class="container">
+        <div class="link-tab">
+            <a [class.active]="activeNav === 'all'" [routerLink]="['/resources']">All</a>
+            <a [class.active]="activeNav === 'case-study'" [routerLink]="['/resources/case-study']">Case Studies</a>
+            <a [class.active]="activeNav === 'video'" [routerLink]="['/resources/video']">Videos</a>
+            <a [class.active]="activeNav === 'blog'" [routerLink]="['/resources/blog']">Articles</a>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-4" *ngFor="let item of displayResources">
+                <a class="resource-item {{item.type}}"
+                    [routerLink]="'/resources/' + item.type +'/' + (item.title.split(' ').join('-').toLowerCase())"
+                    [state]="item">
+                    <div class="image">
+                        <span>{{item.author}}</span>
+                        <img [src]="item?.coverImageThumbnail" />
+                    </div>
+                    <h5>{{item?.title}}</h5>
+                    <label>{{getDisplayType(item)}}</label>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 text-center">
+            <a class="btn btn-link">
+                <span>View More</span>
+                <i class="mdi mdi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>

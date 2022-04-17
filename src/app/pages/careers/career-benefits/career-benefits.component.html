@@ -1,0 +1,12 @@
+<section class="career-benefits">
+    <div class="container">
+        <h2 class="heading">Be a part of the <br /><em>thriving</em> community.</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of benefits">
+                <ses-listgrid-card [type]="'full'" [data]="item" [hideLink]="true">
+                </ses-listgrid-card>
+            </div>
+        </div>
+    </div>
+</section>
