@@ -5,8 +5,10 @@ handlers:
   - url: /
     static_files: dist/ses-website/index.html
     upload: dist/ses-website/index.html
+    secure: always
   - url: /
     static_dir: dist/ses-website
+    secure: always
 skip_files:
   - e2e/
   - node_modules/
